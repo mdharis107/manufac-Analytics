@@ -1,8 +1,8 @@
 
-##Bar Chart
+## Bar Chart
 ![BarChart](https://user-images.githubusercontent.com/104049398/221095303-a68e3c6f-4af1-4221-a793-73a682d62725.png)
 
-##Scatter Chart
+## Scatter Chart
 ![ScatterChart](https://user-images.githubusercontent.com/104049398/221095350-1dbee7f5-43dd-4ec1-8369-dbefd762a48f.png)
 
 # Getting Started with Create React App
