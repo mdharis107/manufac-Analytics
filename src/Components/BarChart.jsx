@@ -1,5 +1,6 @@
 import EChartsReact from "echarts-for-react";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { data } from "./data";
 
 const BarChart = () => {
@@ -19,7 +20,16 @@ const BarChart = () => {
 
   return (
     <>
-      //Implementation of Chart
+      {/* Link to go back to Home Page */}
+      <div style={{ textAlign: "left", width: "75%", margin: "auto" }}>
+        <Link to="/">
+          <h1>Back</h1>
+        </Link>
+      </div>
+      <div style={{ color: "blue" }}>
+        <h1>Bar Chart</h1>
+      </div>
+      {/* Implementation of Chart */}
       <EChartsReact
         key={Date.now()}
         option={{
@@ -80,7 +90,7 @@ const BarChart = () => {
             ,
           ],
         }}
-        //Css for he 
+        //Css for the Chart
         style={{ width: "80%", margin: "auto", height: 400, marginTop: "10%" }}
       />
     </>
