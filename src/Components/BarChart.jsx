@@ -9,7 +9,7 @@ const BarChart = () => {
   useEffect(() => {
     let addData = [];
 
-    for (var i = 0; i < data.length; i++) {
+    for (var i = 0; i < 3; i++) {
       //   console.log(data[i].Malic_Acid);
       addData.push(data[i].Malic_Acid);
     }
@@ -29,6 +29,7 @@ const BarChart = () => {
       <div style={{ color: "blue" }}>
         <h1>Bar Chart</h1>
       </div>
+
       {/* Implementation of Chart */}
       <EChartsReact
         key={Date.now()}
@@ -85,6 +86,7 @@ const BarChart = () => {
                 normal: {
                   barBorderRadius: 2,
                 },
+                
               },
             },
             ,
