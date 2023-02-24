@@ -5,16 +5,23 @@ import { data } from "./data";
 
 const ScatterChart = () => {
   const [chartData, setChartData] = useState([]);
+  const [chartData1, setChartData1] = useState([]);
 
   useEffect(() => {
     let addData = [];
+    let addData1 = [];
 
     for (var i = 0; i < data.length; i++) {
-      //   console.log(data[i].Malic_Acid);
-      addData.push(data[i].Malic_Acid);
+      addData.push(data[i].Color_intensity);
+      addData1.push(data[i].Hue);
     }
+    // console.log(addData)
     setChartData(addData);
+    setChartData1(addData1);
   }, []);
+  // console.log(chartData);
+  // console.log(chartData1);
+
   return (
     <>
       {/* Link to go back to Home Page */}
@@ -49,34 +56,32 @@ const ScatterChart = () => {
             end: 100,
           },
           legend: {
-            data: ["Malic Acid", "Alcohol"],
+            data: ["Hue"],
           },
+          
           grid: { top: 60, left: 30, right: 60, bottom: 30 },
           xAxis: [
             {
-              name: "Alcohol",
+              name: "Color Intensity",
               type: "value",
               scale: true,
-              max: 15,
-              min: 11,
+              // max: 15,
+              min: 0,
             },
           ],
           yAxis: [
             {
               scale: true,
-
-              name: "Malic Acid",
+              name: "Hue",
               type: "value",
               scale: true,
-              max: 20,
               min: 0,
-              boundaryGap: [0.2, 0.2],
             },
           ],
           series: [
             {
-              name: "Malic Acid",
-              type: "bar",
+              name: "Hue",
+              type: "scatter",
               data: chartData,
               itemStyle: {
                 normal: {
@@ -84,12 +89,20 @@ const ScatterChart = () => {
                 },
               },
             },
-            ,
+            {
+              name: "Color Intensity",
+              type: "scatter",
+              data: chartData1,
+              itemStyle: {
+                normal: {
+                  barBorderRadius: 2,
+                },
+              },
+            },
           ],
         }}
-        
         //Css for the Chart
-        style={{ width: "80%", margin: "auto", height: 400, marginTop: "10%" }}
+        style={{ width: "85%", margin: "auto", height: 400, marginTop: "10%" }}
       />
     </>
   );
